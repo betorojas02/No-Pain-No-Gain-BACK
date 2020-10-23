@@ -1,8 +1,8 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
-
-import  * as cors from 'cors';
+var cors = require('cors');
+// import  * as cors from 'cors';
 import * as helmet from 'helmet';
 
 // const helmet = require("helmet");
