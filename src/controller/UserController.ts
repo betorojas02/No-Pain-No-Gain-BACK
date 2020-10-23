@@ -32,12 +32,15 @@ export class UserController {
     }
 
     static newUser = async (req:Request,res:Response) => {
-        const {username,cedula,password,sedesave} = req.body;
+        const {username,cedula,password,sedesave , apellido , email} = req.body;
         const user = new User();
 
         user.username = username;
         user.password = password;
         user.cedula = cedula;
+        user.apellido = apellido;
+        user.email = email;
+
 
         //validate
         const errors = await validate(user);
@@ -68,6 +71,7 @@ export class UserController {
 
 
         } catch (error) {
+            console.log(error);
             return res.status(409).json({message:'Usuario ya existe'})
         }
             // all ok
