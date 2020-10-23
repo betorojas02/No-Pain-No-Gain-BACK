@@ -10,7 +10,7 @@ class AuthController {
     static login = async( req: Request, res:Response) =>{
         const {username,password} = req.body;
         if(!(username && password)){
-            res.status(400).json({message:'Username && Password are required!'});
+            res.status(400).json({message:'Usuario y clave requeridos!'});
         }
 
         const userRepository = getRepository(User);
@@ -19,14 +19,14 @@ class AuthController {
         try {
             user = await userRepository.findOneOrFail({where:{username}});
         } catch (e) {
-            return res.status(400).json({message:'Username or Passwors incorrect!'});
+            return res.status(400).json({message:'Usuario o clave incorrectos!'});
         }
         if(!user.checkPassword(password)){
-            return res.status(400).json({message:'Username or PAssword are incorrect'});
+            return res.status(400).json({message:'Usuario o clave incorrectos'});
         }
         
         const token = jwt.sign({userId:user.id,username:user.username},config.jwtSecrete,{expiresIn:'1h'});
-        res.json({message:'ok',token});
+        res.json({message:'ok',token , user: user });
     } 
 }
 export default AuthController;
