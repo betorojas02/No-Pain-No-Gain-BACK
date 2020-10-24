@@ -8,7 +8,7 @@ const router = Router();
 
 router.post('/' , [checkJwt],CampusController.newSede);
 
-router.get('/city/:id' ,[checkJwt], CampusController.sedesListCuidad);
+router.get('/city/:id' , CampusController.sedesListCuidad);
 
 
 router.get('/' ,[checkJwt], CampusController.sedesList);

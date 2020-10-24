@@ -12,7 +12,7 @@ import { checkJwt } from '../middlewares/jwt';
 const router = Router();
 
 router.post('/' ,[checkJwt], CityController.newCity);
-router.get('/' ,[checkJwt] ,CityController.listarCiudad);
+router.get('/' , CityController.listarCiudad);
 
 
 export default router;
