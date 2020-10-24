@@ -7,7 +7,7 @@ import {Sede} from '../entity/Sedes';
 import {User} from '../entity/User';
 
 
-export class SedeController{
+export class CampusController{
 
 
     static newSede = async (req:Request, res:Response) => {

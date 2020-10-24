@@ -37,7 +37,7 @@ export class User {
     @Column()
     email:string;
 
-    @Column()
+    @Column( { select: false})
     @MinLength(6)
     password:string;
 

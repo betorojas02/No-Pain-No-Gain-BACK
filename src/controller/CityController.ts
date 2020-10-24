@@ -4,7 +4,7 @@ import {getRepository} from 'typeorm';
 import {User} from '../entity/User';
 
 
-export class CuidadController {
+export class CityController {
 
 
     static newCity = async (req:Request, res:Response) => {

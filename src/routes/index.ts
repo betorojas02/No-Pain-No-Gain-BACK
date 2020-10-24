@@ -2,9 +2,9 @@ import {Router} from 'express'
 import  auth from './auth'
 import user from './user'
 
-import ciudadRoutes from './ciudadRoutes'
+import ciudadRoutes from './cityRoute'
 
-import sedeRoutes from './sedeRouter'
+import sedeRoutes from './campusRouter'
 
 
 const routes = Router();
