@@ -1,3 +1,4 @@
+import { checkJwt } from './../middlewares/jwt';
 import {Router} from 'express'
 
 import {CampusController} from '../controller/CampusController';
@@ -5,12 +6,12 @@ import {CampusController} from '../controller/CampusController';
 
 const router = Router();
 
-router.post('/' , CampusController.newSede);
+router.post('/' , [checkJwt],CampusController.newSede);
 
-router.get('/city/:id' , CampusController.sedesListCuidad);
+router.get('/city/:id' ,[checkJwt], CampusController.sedesListCuidad);
 
 
-router.get('/' , CampusController.sedesList);
+router.get('/' ,[checkJwt], CampusController.sedesList);
 
 
 export default router;
