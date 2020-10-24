@@ -68,10 +68,10 @@ docker-compose up -d
 
 ### los puertos 
 
-si corre el proyecto locamente tiene que colocar el puerto en 3000 si es por docker 5000 
+para comunicarse con node.js y correr el proyecto es por el puerto 5000, pero internamente en docker es por le puerto 3000  
 
 - localmente puerto :   3000
-- localmente puerto :   5000
+- docker puerto :   5000
 
 
 
