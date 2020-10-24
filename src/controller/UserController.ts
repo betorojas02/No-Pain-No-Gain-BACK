@@ -154,13 +154,14 @@ export class UserController {
 
     static dataUser = async (req:Request , res:Response) => {
 
-        console.log('llego');
+        const {id} = req.params;
 
         try{
             // const questionRepository = getRepository(User);
             // const questions = await questionRepository.find({ relations: ["sede"] });
             const result = await getRepository(User)
                 .createQueryBuilder("user").leftJoinAndSelect("user.sede" , "sede").leftJoinAndSelect("sede.sede" , "nombresede").
+                where("nombresede.id = " + id).
                 leftJoinAndSelect("nombresede.cuidad" , "ciudad")
                 // .where("user.cedula = :cedula", { cedula: "1018477870" })
                 .getMany();

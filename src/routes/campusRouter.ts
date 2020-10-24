@@ -7,7 +7,10 @@ const router = Router();
 
 router.post('/' , CampusController.newSede);
 
-router.get('/:id' , CampusController.sedesList);
+router.get('/city/:id' , CampusController.sedesListCuidad);
+
+
+router.get('/' , CampusController.sedesList);
 
 
 export default router;

@@ -27,18 +27,18 @@ export class User {
     cedula:number;
 
     @Column()
-    @MinLength(6)
+   
     username:string;
 
     @Column()
-    @MinLength(6)
+   
     apellido:string;
 
     @Column()
     email:string;
 
     @Column( )
-    @MinLength(6)
+   
     password:string;
 
 
