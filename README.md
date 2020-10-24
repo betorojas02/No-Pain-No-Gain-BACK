@@ -1,17 +1,12 @@
-
-
-
-# Descripcion
+# Descripción
 
 proyecto realizado en node.js con el ORM  typeorm, para proteger las rutas se utilizo JWT.
 
 
 
+# conexión base de datos sin Docker 
 
-# conexcion base de datos sin docker 
-
-- nesecita crear las siguientes credenciales 
-
+- necesita crear las siguientes credenciales 
 
 
 | tipo  | dato |
@@ -24,8 +19,7 @@ proyecto realizado en node.js con el ORM  typeorm, para proteger las rutas se ut
 | database  | gym |
 
 
-
-# como utilizar rutas con la proteccion de jwt 
+# como utilizar rutas con la protección de jwt 
 
 para el manejo de las rutas protegidas se nesecita enviar el los headers
 
@@ -33,9 +27,7 @@ Ejemplo
 
 - enviara el token mediante el nombre "auth"
 
-
-### Documentacion de las rutas 
-
+### Documentación de las rutas 
 
 
 con esta url puede ver toda la documentacion de las rutas que se utiliza para realizar este proyecto
@@ -44,20 +36,17 @@ https://documenter.getpostman.com/view/6832595/TVYDeeYG
 
 
 
-
 ### Docker
 
 - dentro de la carpeta del proyecto de node
-- tener instalado docker y configurado correctamente 
+- tener instalado Docker y configurado correctamente 
 
 ```sh
 docker-compose  build 
 docker-compose up -d
 ```
 
-
 - encontra un archvio llamado docker-compose donde encontrara  las credenciales de base de datos
-
 
 
 ### Datos admin
@@ -71,7 +60,8 @@ docker-compose up -d
 para comunicarse con node.js y correr el proyecto es por el puerto 5000, pero internamente en docker es por le puerto 3000  
 
 - localmente puerto :   3000
-- docker puerto :   5000
+- Docker puerto :   5000
+
 
 
 
