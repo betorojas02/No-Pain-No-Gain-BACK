@@ -28,6 +28,6 @@ router.delete('/:id',[checkJwt],UserController.deleteUser);
 router.post('/createUserGym',[checkJwt],UserController.createUserGym);
 
 
-router.get('/getuser/userall',UserController.dataUser);
+router.get('/getuser/userall/:id',UserController.dataUser);
 
 export default router;

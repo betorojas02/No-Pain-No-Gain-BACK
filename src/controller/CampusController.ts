@@ -12,7 +12,8 @@ export class CampusController{
 
     static newSede = async (req:Request, res:Response) => {
 
-        const {name , cuidad} = req.body;
+        const {name , ciudad} = req.body;
+
 
 
         const sede = new Sede();
@@ -21,7 +22,7 @@ export class CampusController{
 
         const cuidadRepository = getRepository(Cuidad);
 
-        const ciudadRespository = await cuidadRepository.findOneOrFail(cuidad);
+        const ciudadRespository = await cuidadRepository.findOneOrFail(ciudad);
 
         sede.cuidad  = ciudadRespository;
 
@@ -39,7 +40,7 @@ export class CampusController{
         }
     }
 
-    static sedesList = async(req:Request,res:Response) => {
+    static sedesListCuidad = async(req:Request,res:Response) => {
         const {id} = req.params;
 
         console.log('ayudaaaaaaaaaaaaaaaaaaa' +id);
@@ -52,6 +53,19 @@ export class CampusController{
                 ]
             });
             res.send(sede);
+        } catch (error) {
+            console.log(error);
+            res.status(404).json({message:'No Tiene resultados'});
+        }
+    }
+
+
+    static sedesList = async (req:Request,res:Response) => {
+
+
+        try {
+            const dataRepository =  await getRepository(Sede).find( { relations: ["cuidad"]});
+            res.send(dataRepository);
         } catch (error) {
             console.log(error);
             res.status(404).json({message:'No Tiene resultados'});
